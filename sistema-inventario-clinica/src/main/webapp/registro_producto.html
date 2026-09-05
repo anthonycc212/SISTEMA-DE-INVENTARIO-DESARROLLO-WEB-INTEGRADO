@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Registrar producto - Sistema de Inventario Clínica La Luz</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo"><div class="cruz">+</div> Clínica La Luz &mdash; Inventario</div>
+    <div class="usuario">Enzo Rivera <span class="rol">Administrador</span></div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="dashboard.html">Panel principal</a>
+      <a href="productos.html">Productos</a>
+      <a href="registro_producto.html" class="activo">Nuevo producto</a>
+      <a href="movimientos.html">Entradas / Salidas</a>
+      <a href="#">Proveedores</a>
+      <a href="#">Reportes</a>
+    </nav>
+    <main class="contenido">
+      <h1 class="titulo-seccion">Registrar nuevo producto</h1>
+      <p class="subtitulo">Complete los datos para agregar un producto al inventario</p>
+
+      <form class="formulario" method="post" action="ProductoServlet">
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Guantes de látex">
+          </div>
+          <div class="campo">
+            <label for="codigo">Código</label>
+            <input type="text" id="codigo" name="codigo" placeholder="Ej. P-006">
+          </div>
+        </div>
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria">
+              <option>Insumos médicos</option>
+              <option>Antisépticos</option>
+              <option>Farmacia</option>
+              <option>Material de curación</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="proveedor">Proveedor</label>
+            <select id="proveedor" name="proveedor">
+              <option>Distribuidora Salud SAC</option>
+              <option>Química Andina EIRL</option>
+              <option>Farmadistribuciones SA</option>
+            </select>
+          </div>
+        </div>
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="stock">Stock inicial</label>
+            <input type="number" id="stock" name="stock" placeholder="0">
+          </div>
+          <div class="campo">
+            <label for="stockMinimo">Stock mínimo</label>
+            <input type="number" id="stockMinimo" name="stockMinimo" placeholder="0">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <input type="text" id="descripcion" name="descripcion" placeholder="Detalle breve del producto">
+        </div>
+        <div class="acciones-tabla" style="margin-top:10px;">
+          <button type="submit" class="btn btn-primario">Guardar producto</button>
+          <a href="productos.html" class="btn btn-secundario">Cancelar</a>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

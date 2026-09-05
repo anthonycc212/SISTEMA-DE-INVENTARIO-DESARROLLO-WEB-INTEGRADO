@@ -1,0 +1,326 @@
+/* =========================================================
+   Sistema de Inventario - Clínica La Luz
+   Hoja de estilos general (CSS3)
+   ========================================================= */
+
+:root {
+  --azul-principal: #0f6b8c;
+  --azul-oscuro: #0a4a61;
+  --celeste: #e6f4f8;
+  --verde-salud: #2fa787;
+  --gris-texto: #333333;
+  --gris-claro: #f4f6f7;
+  --blanco: #ffffff;
+  --borde: #d9e2e5;
+  --alerta: #d9534f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--gris-claro);
+  color: var(--gris-texto);
+}
+
+/* ---------- Encabezado / Barra superior ---------- */
+header.app-header {
+  background-color: var(--azul-principal);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header.app-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+header.app-header .logo .cruz {
+  background-color: var(--blanco);
+  color: var(--azul-principal);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+header.app-header .usuario {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header.app-header .usuario span.rol {
+  background-color: rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* ---------- Navegación lateral ---------- */
+nav.sidebar {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  width: 220px;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+nav.sidebar a {
+  display: block;
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 14px 24px;
+  font-size: 15px;
+  border-left: 4px solid transparent;
+}
+
+nav.sidebar a:hover,
+nav.sidebar a.activo {
+  background-color: rgba(255,255,255,0.08);
+  border-left: 4px solid var(--verde-salud);
+}
+
+.layout {
+  display: flex;
+}
+
+main.contenido {
+  flex: 1;
+  padding: 30px;
+}
+
+/* ---------- Tarjetas de resumen (dashboard) ---------- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.tarjeta {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.tarjeta .valor {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--azul-principal);
+}
+
+.tarjeta .etiqueta {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.tarjeta.alerta .valor {
+  color: var(--alerta);
+}
+
+/* ---------- Secciones y títulos ---------- */
+h1.titulo-seccion {
+  font-size: 22px;
+  color: var(--azul-oscuro);
+  margin-bottom: 6px;
+}
+
+p.subtitulo {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ---------- Tabla de productos ---------- */
+table.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--blanco);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+table.tabla-datos thead {
+  background-color: var(--azul-principal);
+  color: var(--blanco);
+}
+
+table.tabla-datos th,
+table.tabla-datos td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--borde);
+}
+
+table.tabla-datos tbody tr:hover {
+  background-color: var(--celeste);
+}
+
+.badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.ok { background-color: #e1f5ee; color: var(--verde-salud); }
+.badge.bajo { background-color: #fdecea; color: var(--alerta); }
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background-color: var(--azul-principal);
+  color: var(--blanco);
+}
+
+.btn-secundario {
+  background-color: var(--blanco);
+  color: var(--azul-principal);
+  border: 1px solid var(--azul-principal);
+}
+
+.acciones-tabla {
+  display: flex;
+  gap: 8px;
+}
+
+.barra-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.buscador input {
+  padding: 9px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--borde);
+  width: 260px;
+}
+
+/* ---------- Formularios ---------- */
+form.formulario {
+  background-color: var(--blanco);
+  border-radius: 10px;
+  padding: 26px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  max-width: 640px;
+}
+
+.campo {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--azul-oscuro);
+}
+
+.campo input,
+.campo select {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--borde);
+  font-size: 14px;
+}
+
+.fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ---------- Pantalla de login ---------- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--azul-principal), var(--verde-salud));
+}
+
+.login-caja {
+  background-color: var(--blanco);
+  width: 380px;
+  padding: 36px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.login-caja .cruz-login {
+  width: 56px;
+  height: 56px;
+  background-color: var(--azul-principal);
+  color: var(--blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0 auto 14px auto;
+}
+
+.login-caja h1 {
+  font-size: 19px;
+  color: var(--azul-oscuro);
+  margin-bottom: 4px;
+}
+
+.login-caja p.desc {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 22px;
+}
+
+.login-caja .campo {
+  text-align: left;
+}
+
+.login-caja .btn-primario {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+footer.pie {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  padding: 18px 0;
+}
