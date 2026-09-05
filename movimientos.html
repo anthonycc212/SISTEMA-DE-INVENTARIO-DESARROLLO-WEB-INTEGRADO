@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Entradas y Salidas - Sistema de Inventario Clínica La Luz</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo"><div class="cruz">+</div> Clínica La Luz &mdash; Inventario</div>
+    <div class="usuario">Enzo Rivera <span class="rol">Administrador</span></div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="dashboard.html">Panel principal</a>
+      <a href="productos.html">Productos</a>
+      <a href="registro_producto.html">Nuevo producto</a>
+      <a href="movimientos.html" class="activo">Entradas / Salidas</a>
+      <a href="#">Proveedores</a>
+      <a href="#">Reportes</a>
+    </nav>
+    <main class="contenido">
+      <h1 class="titulo-seccion">Registrar movimiento de stock</h1>
+      <p class="subtitulo">Registre una entrada o salida de productos del inventario</p>
+
+      <form class="formulario" method="post" action="MovimientoServlet">
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="producto">Producto</label>
+            <select id="producto" name="producto">
+              <option>P-001 · Guantes de látex (caja x100)</option>
+              <option>P-002 · Alcohol 70° (litro)</option>
+              <option>P-003 · Jeringas 5ml (unidad)</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="tipo">Tipo de movimiento</label>
+            <select id="tipo" name="tipo">
+              <option>Entrada</option>
+              <option>Salida</option>
+            </select>
+          </div>
+        </div>
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" name="cantidad" placeholder="0">
+          </div>
+          <div class="campo">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="motivo">Motivo / observación</label>
+          <input type="text" id="motivo" name="motivo" placeholder="Ej. Reposición de stock, uso en consulta, etc.">
+        </div>
+        <div class="acciones-tabla" style="margin-top:10px;">
+          <button type="submit" class="btn btn-primario">Registrar movimiento</button>
+          <a href="dashboard.html" class="btn btn-secundario">Cancelar</a>
+        </div>
+      </form>
+
+      <h1 class="titulo-seccion" style="font-size:18px; margin-top:30px;">Historial reciente</h1>
+      <table class="tabla-datos" style="margin-top:10px;">
+        <thead>
+          <tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th>Cantidad</th><th>Motivo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>04/09/2026</td><td>Guantes de látex (caja)</td><td>Salida</td><td>5</td><td>Uso en consulta externa</td></tr>
+          <tr><td>03/09/2026</td><td>Alcohol 70° (litro)</td><td>Entrada</td><td>20</td><td>Reposición de stock</td></tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

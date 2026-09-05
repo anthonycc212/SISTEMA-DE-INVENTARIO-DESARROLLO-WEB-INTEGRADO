@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Productos - Sistema de Inventario Clínica La Luz</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo"><div class="cruz">+</div> Clínica La Luz &mdash; Inventario</div>
+    <div class="usuario">Enzo Rivera <span class="rol">Administrador</span></div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="dashboard.html">Panel principal</a>
+      <a href="productos.html" class="activo">Productos</a>
+      <a href="registro_producto.html">Nuevo producto</a>
+      <a href="movimientos.html">Entradas / Salidas</a>
+      <a href="#">Proveedores</a>
+      <a href="#">Reportes</a>
+    </nav>
+    <main class="contenido">
+      <h1 class="titulo-seccion">Listado de productos</h1>
+      <p class="subtitulo">Consulta, edición y control del stock disponible</p>
+
+      <div class="barra-acciones">
+        <div class="buscador">
+          <input type="text" placeholder="Buscar producto...">
+        </div>
+        <a href="registro_producto.html" class="btn btn-primario">+ Nuevo producto</a>
+      </div>
+
+      <table class="tabla-datos">
+        <thead>
+          <tr>
+            <th>Código</th><th>Producto</th><th>Categoría</th><th>Proveedor</th>
+            <th>Stock</th><th>Estado</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P-001</td><td>Guantes de látex (caja x100)</td><td>Insumos médicos</td>
+            <td>Distribuidora Salud SAC</td><td>42</td>
+            <td><span class="badge ok">Disponible</span></td>
+            <td class="acciones-tabla"><a class="btn btn-secundario" href="#">Editar</a><a class="btn btn-secundario" href="#">Eliminar</a></td>
+          </tr>
+          <tr>
+            <td>P-002</td><td>Alcohol 70° (litro)</td><td>Antisépticos</td>
+            <td>Química Andina EIRL</td><td>8</td>
+            <td><span class="badge bajo">Stock bajo</span></td>
+            <td class="acciones-tabla"><a class="btn btn-secundario" href="#">Editar</a><a class="btn btn-secundario" href="#">Eliminar</a></td>
+          </tr>
+          <tr>
+            <td>P-003</td><td>Jeringas 5ml (unidad)</td><td>Insumos médicos</td>
+            <td>Distribuidora Salud SAC</td><td>130</td>
+            <td><span class="badge ok">Disponible</span></td>
+            <td class="acciones-tabla"><a class="btn btn-secundario" href="#">Editar</a><a class="btn btn-secundario" href="#">Eliminar</a></td>
+          </tr>
+          <tr>
+            <td>P-004</td><td>Mascarillas quirúrgicas (caja x50)</td><td>Insumos médicos</td>
+            <td>Distribuidora Salud SAC</td><td>5</td>
+            <td><span class="badge bajo">Stock bajo</span></td>
+            <td class="acciones-tabla"><a class="btn btn-secundario" href="#">Editar</a><a class="btn btn-secundario" href="#">Eliminar</a></td>
+          </tr>
+          <tr>
+            <td>P-005</td><td>Paracetamol 500mg (blíster)</td><td>Farmacia</td>
+            <td>Farmadistribuciones SA</td><td>76</td>
+            <td><span class="badge ok">Disponible</span></td>
+            <td class="acciones-tabla"><a class="btn btn-secundario" href="#">Editar</a><a class="btn btn-secundario" href="#">Eliminar</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

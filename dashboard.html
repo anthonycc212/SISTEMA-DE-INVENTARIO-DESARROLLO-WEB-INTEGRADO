@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel principal - Sistema de Inventario Clínica La Luz</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo"><div class="cruz">+</div> Clínica La Luz &mdash; Inventario</div>
+    <div class="usuario">Enzo Rivera <span class="rol">Administrador</span></div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="dashboard.html" class="activo">Panel principal</a>
+      <a href="productos.html">Productos</a>
+      <a href="registro_producto.html">Nuevo producto</a>
+      <a href="movimientos.html">Entradas / Salidas</a>
+      <a href="#">Proveedores</a>
+      <a href="#">Reportes</a>
+    </nav>
+    <main class="contenido">
+      <h1 class="titulo-seccion">Panel principal</h1>
+      <p class="subtitulo">Resumen general del inventario de la clínica</p>
+
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="valor">184</div>
+          <div class="etiqueta">Productos registrados</div>
+        </div>
+        <div class="tarjeta">
+          <div class="valor">6</div>
+          <div class="etiqueta">Categorías activas</div>
+        </div>
+        <div class="tarjeta alerta">
+          <div class="valor">9</div>
+          <div class="etiqueta">Productos con stock bajo</div>
+        </div>
+        <div class="tarjeta">
+          <div class="valor">27</div>
+          <div class="etiqueta">Movimientos del mes</div>
+        </div>
+      </div>
+
+      <h1 class="titulo-seccion" style="font-size:18px;">Últimos movimientos registrados</h1>
+      <table class="tabla-datos" style="margin-top:10px;">
+        <thead>
+          <tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th>Cantidad</th><th>Usuario</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>04/09/2026</td><td>Guantes de látex (caja)</td><td>Salida</td><td>5</td><td>E. Rivera</td></tr>
+          <tr><td>03/09/2026</td><td>Alcohol 70° (litro)</td><td>Entrada</td><td>20</td><td>V. Jiménez</td></tr>
+          <tr><td>03/09/2026</td><td>Jeringas 5ml</td><td>Salida</td><td>15</td><td>A. Ccenhua</td></tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
